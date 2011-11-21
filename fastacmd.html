@@ -1,0 +1,57 @@
+<!--
+/* $Id: fastacmd.html,v 0.1 2011/11/21 $
+-->
+<!-- A tool based in the NCBI wwwblast --->
+
+<HTML>
+<TITLE>FASTACMD Search </TITLE>
+<BODY BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#660099" ALINK="#660099">
+<map name=img_map>
+<area shape=rect coords=2,1,48,21 href="http://www.ncbi.nlm.nih.gov">
+<area shape=rect coords=419,1,459,21 href="index.html">
+<area shape=rect coords=465,1,505,21 href="docs/fastacmd_help.html">
+</map>
+<img USEMAP=#img_map WIDTH=509 HEIGHT=22 SRC="images/fastacmd_form.gif" ISMAP> 
+
+<FORM ACTION="/blast/fastacmd.cgi" METHOD = "POST">
+<BR>
+<B>This is a web app. to retrieve sequences in fasta format from a blastdb<BR> 
+using fastacmd.</B>
+<BR>
+<BR>
+<B>Choose database to search:</B>
+<P>
+<a href="docs/blast_databases.html">Database (-d)</a>
+<select name = "DATALIB">
+    <option VALUE = "nr"> nr
+    <!-- Add here your blastdb as <option VALUE ="blastdbfile"> blastdbname --->
+</select>
+
+<P>
+Enter sequence id or a search string below (-s): 
+<BR>
+<input TYPE="text" NAME="ID" VALUE="" SIZE="64">
+<BR>
+<P>
+Set subsequence (-L): From
+&nbsp;&nbsp<input TYPE="text" NAME="QUERY_FROM" VALUE="" SIZE="10">
+&nbsp;&nbsp To
+<input TYPE="text" NAME="QUERY_TO" VALUE="" SIZE="10">
+<P>
+Select Strand (-S) (only for nucleotides): &nbsp;
+<select name="STRAND">
+  <option VALUE = "+"> +
+  <option VALUE = "-"> -
+</select>
+<BR>
+<INPUT TYPE="submit" VALUE="Submit">
+<HR>
+
+
+<BR>
+<!-- Created: Thu Mar 16 16:41:05 EST 2000 -->
+<!-- hhmts start -->
+Created: Nov 18, 2011
+<!-- hhmts end -->
+</BODY>
+</HTML>
