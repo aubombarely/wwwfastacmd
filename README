@@ -1,0 +1,45 @@
+===============================================================================
+== wwwfastacmd                                                               ==
+===============================================================================
+
+wwwfastacmd are four files to add to wwblast NCBI tool, to be able to use
+fastacmd through a web interface, in other words, to be able to retrieve
+a sequence from a blastdb based in its ID.
+
+This web interface use the same strcuture than wwwblast. It has two important 
+files:
+
+  * fastacmd.html, with the form to submit the query.
+
+  * fastacmd.cgi, with all the code to check the submitted data and 
+    the line to executate the fastacmd. It is performed using `STRING`
+    (http://perldoc.perl.org/perlop.html#%60STRING%60), instead system
+    to avoid the creation of any temp file. The output is directly redirect
+    to a perl variable and printed with the cgi script. 
+
+
+Installation and configuration:
+===============================
+
+1) Follow the instructions to install and configure NCBI wwwblast.
+   (http://www.ncbi.nlm.nih.gov/staff/tao/URLAPI/wwwblast/)
+
+2) Download the wwwfastacmd files and copy the following files in the 
+   locations:
+
+   fastacmd.html      => /blast
+   fastacmd.cgi       => /blast
+   fastacmd_help.html => /blast/docs
+   fastacmd_form.gif  => /blast/images
+
+ 3) Replace index.html with the index.html from the wwwfastacmd files.
+
+ 4) Open fastacmd.html, add any blastdb in the section:
+    <select name="DATALIB">
+        <option VALUE = "blastdb_localization"> blastdb name
+    </select>
+
+ 5) Check that the files are readables for anyone.
+
+
+
