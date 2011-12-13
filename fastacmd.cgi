@@ -19,6 +19,14 @@ my $qry_f = $cgi_o->param('QUERY_FROM');
 my $qry_t = $cgi_o->param('QUERY_TO');
 my $strd = $cgi_o->param('STRAND');
 
+## Reformat the ID according fasta
+## don't letting the user use spaces
+
+if ($id =~ m/^(.+)\s+/) {
+    $id = $1;
+}
+
+
 ## Define the header
 
 my $header =
